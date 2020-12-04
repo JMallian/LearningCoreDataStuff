@@ -28,26 +28,6 @@ class NotesViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupTableView()
-        
-//        if let entityDescription = NSEntityDescription.entity(forEntityName: "Note", in: coreDataManager.managedObjectContext) {
-//            print(entityDescription.name ?? "No Name")
-//            print(entityDescription.properties)
-//
-//            let note = NSManagedObject(entity: entityDescription, insertInto: coreDataManager.managedObjectContext)
-//            print(note)
-//            note.setValue("My First Note <3", forKey: "title")
-//            note.setValue(NSDate(), forKey: "createdAt")
-//            note.setValue(NSDate(), forKey: "updatedAt")
-//            print(note)
-//
-//            do {
-//                try coreDataManager.managedObjectContext.save()
-//            } catch {
-//                print("Unable to Save Managed Object Context")
-//                print("\(error), \(error.localizedDescription)")
-//            }
-//        }
-        
         fetchNotes()
         setupNotificationHandling()
     }
@@ -191,7 +171,7 @@ extension NotesViewController: UITableViewDataSource {
         note.managedObjectContext?.delete(note)
         // could have also used
         // coreDataManager.managedObjectContext.delete(note)
-        // because it's the same context! 
+        // because it's the same context!
     }
     
 }
